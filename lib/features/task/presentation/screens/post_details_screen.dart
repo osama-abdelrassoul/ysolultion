@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ysolultion/core/app_constants/app_constants.dart';
 import 'package:ysolultion/core/services/injection_container.dart';
 import 'package:ysolultion/features/task/presentation/cubit/post_cubit.dart';
 
@@ -13,7 +14,7 @@ class PostScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Post Details"),
-          backgroundColor: Colors.blue,
+          backgroundColor: AppColors.appGreemColor,
         ),
         body: BlocBuilder<PostCubit, AllPostsState>(
           builder: (context, state) {
@@ -23,7 +24,7 @@ class PostScreen extends StatelessWidget {
               return Center(
                 child: Text(
                   state.message,
-                  style: const TextStyle(color: Colors.red),
+                  style: const TextStyle(color: AppColors.appBlackColor),
                 ),
               );
             } else if (state is PostLoaded) {
@@ -52,7 +53,7 @@ class PostScreen extends StatelessWidget {
                               style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.blueGrey,
+                                color: AppColors.appGreyColor,
                               ),
                             ),
                             Text(
@@ -60,7 +61,7 @@ class PostScreen extends StatelessWidget {
                               style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.blueGrey,
+                                color: AppColors.appGreyColor,
                               ),
                             ),
                             const Divider(),
@@ -76,7 +77,7 @@ class PostScreen extends StatelessWidget {
                               post.body,
                               style: const TextStyle(
                                 fontSize: 16,
-                                color: Colors.black87,
+                                color: AppColors.appBlackColor,
                               ),
                             ),
                           ],
